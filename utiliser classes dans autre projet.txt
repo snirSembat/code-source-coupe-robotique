@@ -1,0 +1,16 @@
+Pour utiliser dans le programme principal du robot une classe venant d'un autre projet PlatformIO :
+
+1) Dans le projet que l'on veut ajouter comme dépendance, il doit y avoir
+un manifeste nommmé "library.properties". Ce fichier doit contenir :
+	name=leNomDeLaDependance
+	version=0.0.1
+	author=VotreNom
+
+2) dans le projet où l'on ajoute la dépendence, mettre dans platformio.ini :
+	
+	lib_deps =
+   		 BoutonLed=symlink://..\classes\BoutonLed @ ^0.0.1
+
+ 	Remarques :
+	 - exemple ici avec une classe BoutonLed 
+	 - numéro de version à adapter 

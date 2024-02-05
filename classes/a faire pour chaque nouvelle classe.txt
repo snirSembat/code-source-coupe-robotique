@@ -1,0 +1,10 @@
+Ce dossier contient les projets PlatformIO de chacune des classes développées pour la coupe robotique.
+
+Pour chaque nouvelle classe :
+ - créer un projet Platformio nommé comme la classe et l'enregistrer dans ce dossier
+ - afin que votre classe puisse être utilisée dans le projet du programme principal du robot, ajouter
+   un fichier "library.properties" contenant les informations suivantes (à adapter) :
+		
+		name=leNomDeLaClasse
+		version=0.0.1
+		author=VotreNom

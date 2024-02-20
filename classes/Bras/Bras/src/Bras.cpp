@@ -5,6 +5,6 @@
 
 Bras::Bras() :angle(0) {
 
-    
+    myservo.
     std::cout << " l'angle est de zéro " << std::endl;
 }

@@ -28,3 +28,17 @@ void Deplacement::avancer (int distance){
     stepper2.run();
 
 }
+
+void Deplacement::tourner (int angle){
+
+    stepper1.moveTo(angle);
+    stepper2.moveTo(angle);
+
+    if (stepper1.distanceToGo() == 0)
+	stepper1.moveTo(-stepper1.currentPosition());
+    if (stepper2.distanceToGo() == 0)
+	stepper2.moveTo(-stepper2.currentPosition());
+
+    stepper1.run();
+    stepper2.run();
+}

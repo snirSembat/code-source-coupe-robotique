@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "tirette.hpp"
+#include "Tirette.hpp"
 
 Tirette::Tirette(int pin):brocheTirette(pin){}
 

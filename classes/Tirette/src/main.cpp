@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "tirette.hpp"
+#include "Tirette.hpp"
 
 int pin = 2;
 Tirette tirette(pin);

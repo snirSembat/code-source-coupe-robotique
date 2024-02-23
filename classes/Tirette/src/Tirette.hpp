@@ -1,6 +1,6 @@
 #include <Arduino.h>
-#ifndef tirette_HPP
-#define tirette_HPP
+#ifndef Tirette_HPP
+#define Tirette_HPP
 
 class Tirette {
     public:

@@ -11,10 +11,10 @@ void EquipePami::choixCouleurEtNum(){
   
 }
 
-bool EquipePami::couleur()const{
-  
+bool EquipePami::getCouleur()const{
+  return true;
 }
 
-int EquipePami::num()const{
+int EquipePami::getNum()const{
   
 }

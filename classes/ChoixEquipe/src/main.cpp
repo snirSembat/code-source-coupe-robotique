@@ -1,5 +1,11 @@
+/**
+ * This is an exmaple of the Grove - Mech Keycap.
+ * Every press of the key will change the color the SK6805 RGB LED. The SK6805 is a NeoPixel compatible chip.
+ * 
+ * Credit:
+ * Adafruit_NeoPixel - https://github.com/adafruit/Adafruit_NeoPixel/blob/master/COPYING
+ */
 #include <Arduino.h>
-#include "choixequipe.hpp"
 #include <Adafruit_NeoPixel.h>
 
 #define BUTTON_PIN   2    // Digital IO pin connected to the button.  This will be
@@ -96,5 +102,3 @@ uint32_t Wheel(byte WheelPos) {
   WheelPos -= 170;
   return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }
-
-

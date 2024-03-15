@@ -10,10 +10,9 @@ class EquipePami{
         int num ;
     public:
         EquipePami(int brocheBouton , int brocheLed);
-        ~EquipePami();
         void choixCouleurEtNum();
-        bool couleur()const ;
-        int num()const ;
+        bool getCouleur() const ;
+        int getNum() const;
 };
 
 

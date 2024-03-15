@@ -1,16 +1,18 @@
 #include "Deplacement.hpp"
 
-Deplacement roues (4, 5 ,7 ,6);
+
+Deplacement roues (4, 5 ,6 ,7);
 
 void setup(){ 
-
-roues.vitesse(1500);
-
+    roues.vitesse(5000);
+    
 }
 
 void loop()
 {
+    
     roues.avancer(1000);
-    delay(1000);
-    roues.tourner(90);
+
+    
+
 }

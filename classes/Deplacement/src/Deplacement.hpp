@@ -12,10 +12,11 @@ class Deplacement {
     void avancer(int distance);
     void tourner(int angle);
     void vitesse(int vitesse);
+    void stop(int pause);
 
     private:
     int brocheXA;
-    int brocheBA;
+    int brocheXB;
     int brocheYA;
     int brocheYB;
     AccelStepper stepper1;

@@ -2,6 +2,8 @@
 #define AFFICHEUR_HPP
 #include <Stream.h>
 #include <string.h>
+#include <rgb_lcd.h>
+
 
 
 class Afficheur{
@@ -11,6 +13,7 @@ public :
     void setCouleur(int numCouleur);
     void ajoutePoint(int point);
     void setInfo(String texte);
+    
 
     
 
@@ -21,6 +24,8 @@ private :
     int couleur;
     int score;
     String info;
+    rgb_lcd lcd;
+    
 
 
 

@@ -13,3 +13,24 @@ Pince::Pince(const int brocheServoGauche, const int brocheServoDroite, const int
 }
 
 
+
+bool Pince::estOuvert() const{
+
+}
+
+bool Pince::estLevee()const{
+
+}
+
+void Pince:: ouvrir(){
+
+}
+void Pince:: fermer(){
+
+}
+void Pince:: lever(){
+
+}
+void Pince:: baisser(){
+
+}

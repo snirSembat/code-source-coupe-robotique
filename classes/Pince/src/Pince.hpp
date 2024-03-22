@@ -18,7 +18,7 @@ class Pince {
     const int brocheServoDroite ;
     const int brocheSerrage ;
     const int brochelevee ;
-    bool estOuvert();
+    const bool estOuvert();
     bool estLevee() ;
 };
 #endif

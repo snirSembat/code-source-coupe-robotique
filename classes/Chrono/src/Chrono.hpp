@@ -7,13 +7,13 @@ class Chrono {
         void start()const;
         void stop();
         void reset();
-        int getTempsEcoule()const;
-        int getTempsRestant()const;
+        unsigned long getTempsEcoule()const;
+        unsigned long getTempsRestant()const;
         void veriFinMatch()const;
 
     private:
-        static int tempsInitial;
-        static int tempsRestant;
+        static unsigned long tempsInitial;
+        static unsigned long tempsRestant;
 
 };
 

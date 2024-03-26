@@ -1,13 +1,9 @@
 #include <Arduino.h>
 #include "Chrono.hpp"
 
-int Chrono::tempsInitial = 0;
-int Chrono::tempsRestant = 0;
-int tempsEcoule = 0;
-int tempsPause = 0;
-int tempsReprise = 0;
+unsigned long Chrono::tempsInitial = 0;
+unsigned long Chrono::tempsRestant = 0;
 bool chronoTourne = false;
-bool demarrage = false;
 
 
 Chrono::Chrono(){
@@ -15,17 +11,9 @@ Chrono::Chrono(){
 }
 
 void Chrono::start()const{
-
-    if(demarrage == false){
-        demarrage = true;
-        tempsInitial = millis();
-    }
     if(chronoTourne == false){
-        tempsReprise = millis();
-        tempsInitial = tempsInitial + (tempsReprise - tempsPause);
+        tempsInitial = millis();
         chronoTourne = true;
-        tempsPause = 0;
-        tempsReprise = 0;
     }
     
 }
@@ -33,39 +21,48 @@ void Chrono::start()const{
 void Chrono::stop(){
 
     chronoTourne = false;
-    tempsPause = millis();
 
 }
 
 void Chrono::reset(){
 
-    if(chronoTourne == false){
-        demarrage = false;
-    }
+    tempsInitial = millis();
 
+}
+
+unsigned long Chrono::getTempsEcoule()const{
+    if(chronoTourne == true){
+        if(millis() - tempsInitial > 100000){
+            return 100000;
+        }
+        else{
+            return millis() - tempsInitial;
+        }
+    }
     else{
-        tempsInitial = millis();
+        return 0;
     }
 
 }
 
-int Chrono::getTempsEcoule()const{
-
-    tempsEcoule = millis() - tempsInitial;
-    return tempsEcoule;
-
-}
-
-int Chrono::getTempsRestant()const{
-
-    tempsRestant = 100000 - Chrono::getTempsEcoule();
-    return tempsRestant;
+unsigned long Chrono::getTempsRestant()const{
+    if(chronoTourne == true){
+        tempsRestant = 100000 - getTempsEcoule();
+        if(tempsRestant > 100000){
+            return 0;
+        }
+        else{
+            return tempsRestant;
+        }
+    }
+    else{
+        return 0;
+    }
 
 }
 
 void Chrono::veriFinMatch()const{
-
-    if(Chrono::getTempsRestant() <= 0){
+    if((getTempsEcoule() >= 100000)){
         while(true){
             delay(1);
         }

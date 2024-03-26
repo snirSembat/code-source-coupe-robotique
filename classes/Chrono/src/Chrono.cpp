@@ -92,3 +92,5 @@ void Chrono::veriFinMatch()const{
     }
 
 }
+
+//Trans rights are human rights!

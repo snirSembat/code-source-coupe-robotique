@@ -29,10 +29,14 @@ void Chrono::start()const{
 
 void Chrono::stop(){
 
-    tempsP = millis();
-    tempsE = getTempsEcoule();
-    tempsR = getTempsRestant();
-    pause = true;
+    if(demarage == true){
+        if(pause == false){
+            tempsP = millis();
+            tempsE = getTempsEcoule();
+            tempsR = getTempsRestant();
+        }
+        pause = true;
+    }
 
 }
 

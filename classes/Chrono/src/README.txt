@@ -42,3 +42,16 @@ NomDuChrono.getTempsRestant()
 	Verifier si le match est finis et bloquer le programme:
 	
 NomDuChrono.veriFinMatch();
+
+
+
+
+
+
+
+
+
+
+
+
+	J'adore les Canards

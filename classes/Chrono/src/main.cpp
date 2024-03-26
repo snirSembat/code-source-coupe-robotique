@@ -2,14 +2,11 @@
 #include "Chrono.hpp"
 
 Chrono timer;
-unsigned long temps1;
-unsigned long temps2;
+int temps1;
+int temps2;
 
 void setup() {
     Serial.begin(9600);
-    pinMode(2, INPUT);
-    pinMode(4, INPUT);
-    pinMode(6, INPUT);
 }
 
 void loop() {

@@ -2,10 +2,10 @@
 #include <Bras.hpp>
 #include <Servo.h>
 
-Bras bras;
+Bras bras(4);
 
 void setup() {
-	bras.broche(4);	
+	bras.begin();	
 	
 }
 

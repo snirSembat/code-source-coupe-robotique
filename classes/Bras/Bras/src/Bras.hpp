@@ -5,8 +5,8 @@
 class Bras { 
 
     public:
-        Bras();
-        void broche (int brocheBras);
+        Bras(int brocheBras);
+        void begin ();
         void rentrer(int angleRentrer); 
         void sortir(int angleSortie);
     

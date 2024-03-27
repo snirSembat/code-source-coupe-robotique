@@ -3,27 +3,24 @@
 #include <Servo.h>
  
 
-    Bras::Bras (): angleRentrer(0),angleSortie(90) {
-
-        
+Bras::Bras (int brocheBras)
+    :angleRentrer(0),angleSortie(90),brocheBras(brocheBras) {
     
-    }
-    void Bras::broche(int brocheBras){
+}
 
-        servoMoteur.attach(brocheBras);
-        servoMoteur.write(0);
-    
-    }
-    void Bras::rentrer(int angleRentrer){
-                
+void Bras::begin(){
 
-        servoMoteur.write(angleRentrer);
+    servoMoteur.attach(brocheBras);
+    servoMoteur.write(0);
 
-    }
-    void Bras::sortir(int angleSortie){
-                
+}
+void Bras::rentrer(int angleRentrer){
+            
+    servoMoteur.write(angleRentrer);
 
-        servoMoteur.write(angleSortie);
+}
+void Bras::sortir(int angleSortie){
 
-    }   
-    
+    servoMoteur.write(angleSortie);
+
+}   

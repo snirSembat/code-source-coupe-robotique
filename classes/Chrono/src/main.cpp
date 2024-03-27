@@ -26,5 +26,4 @@ void loop() {
     Serial.println(temps1);
     Serial.println("Temps restant:");
     Serial.println(temps2);
-    timer.veriFinMatch();
 }

@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <MsTimer2.h>
 #include "Chrono.hpp"
 
 unsigned long Chrono::tempsInitial = 0;
@@ -9,8 +10,19 @@ int tempsR = 100;
 bool pause = false;
 bool demarage = false;
 
-Chrono::Chrono(){
+void isk(){
 
+    if(tempsE >= 100){
+        while(true){
+            delay(100000);
+        }
+    }
+
+}
+
+Chrono::Chrono(){
+    MsTimer2::set(500, isk);
+    MsTimer2::start();
 }
 
 void Chrono::start()const{
@@ -34,8 +46,8 @@ void Chrono::stop(){
             tempsP = millis();
             tempsE = getTempsEcoule();
             tempsR = getTempsRestant();
+            pause = true;
         }
-        pause = true;
     }
 
 }
@@ -61,7 +73,8 @@ unsigned long Chrono::getTempsEcoule()const{
             return 100;
         }
         else{
-            return (millis() - tempsInitial)/1000;
+            tempsE = (millis() - tempsInitial)/1000;
+            return tempsE;
         }
     }
     else{
@@ -83,16 +96,6 @@ unsigned long Chrono::getTempsRestant()const{
     }
     else{
         return tempsR;
-    }
-
-}
-
-void Chrono::veriFinMatch()const{
-
-    if((getTempsEcoule() >= 100)){
-        while(true){
-            delay(100000);
-        }
     }
 
 }

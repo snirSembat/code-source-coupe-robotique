@@ -1,36 +1,70 @@
 #include "Pince.hpp"
-#include "Arduino.h"
+#include <Arduino.h>
+#include <Servo.h>
+
+Pince::Pince( int brocheGauche,int brocheDroite  ,int brocheSerrage  ,int brocheLever )
+  : brocheGauche(brocheGauche),brocheDroite(brocheDroite),brocheSerrage(brocheSerrage),brocheLever(brocheLever)
+    
+{
+    
+}
 
 
-
-Pince::Pince(const int brocheServoGauche, const int brocheServoDroite, const int brocheSerrage, const int brochelevee) 
-: brocheServoGauche(brocheServoGauche),brocheServoDroite(brocheServoDroite),brocheSerrage(brocheSerrage),brochelevee(brochelevee){
+void Pince::begin() {
+    servoDroitPince.attach(6);
+    servoGauchePince.attach(5);
+    servoLever.attach(4);
+    servoSerrage.attach(3);
    
-    pinMode(brocheServoGauche, OUTPUT);
-    pinMode(brocheServoDroite, OUTPUT);
-    pinMode(brocheSerrage, OUTPUT);
-    pinMode(brochelevee, OUTPUT);
-}
-
-
-
-bool Pince::estOuvert() const{
 
 }
-
-bool Pince::estLevee()const{
-
+bool Pince::estOuvert() const {
+    return false;
 }
 
-void Pince:: ouvrir(){
-
+bool Pince::estLevee() const {
+    return false;
 }
-void Pince:: fermer(){
 
+void Pince::ouvrir() {
+    int angleGauche (180);
+    int angleDroit (180);
+    int angleHaut (180);
+    int angleBas (180);
+    servoGauchePince.write(angleGauche);
+    servoDroitPince.write(angleDroit);
+    servoSerrage.write(angleHaut);
+    servoLever.write(angleBas);
 }
-void Pince:: lever(){
-
+void Pince::fermer() {
+    // marty on a besoin de faire des test
+     int angleGauche (0);
+    int angleDroit (0);
+    int angleHaut (0);
+    int angleBas (0);
+    servoGauchePince.write(angleGauche);
+    servoDroitPince.write(angleDroit);
+    servoSerrage.write(angleHaut);
+    servoLever.write(angleBas);
 }
-void Pince:: baisser(){
 
+void Pince::lever() {
+    int angleGauche (0);
+    int angleDroit (0);
+    int angleHaut (0);
+    int angleBas (0);
+    servoGauchePince.write(angleGauche);
+    servoDroitPince.write(angleDroit);
+    servoSerrage.write(angleHaut);
+    servoLever.write(angleBas);
+}
+void Pince::baisser() {
+    int angleGauche (0);
+    int angleDroit (0);
+    int angleHaut (0);
+    int angleBas (0);
+    servoGauchePince.write(angleGauche);
+    servoDroitPince.write(angleDroit);
+    servoSerrage.write(angleHaut);
+    servoLever.write(angleBas);
 }

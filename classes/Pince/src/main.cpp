@@ -1,19 +1,19 @@
 #include <Arduino.h>
-#include <Pince.cpp>
+#include <Pince.hpp>
 
-// put function declarations here:
-int myFunction(int, int);
+#include <Servo.h>
+
+Pince maPince(3,4,5,6);
+
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
-}
+  maPince.begin();
+  Serial.begin(9600);
 
+}
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  maPince.ouvrir();
+  delay(1000);
+  maPince.fermer();
+  delay(1000);
 }

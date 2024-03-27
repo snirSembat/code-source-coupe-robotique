@@ -11,13 +11,15 @@ void setup(){
 }
 
 void loop(){
-  if (tirette.estEnPlace()){
-    Serial.print("marche");
-    delay(1000);
-  }
 
-  else if (tirette.estRetiree()) {
-    Serial.print("retire");
-    delay(1000);
-  }
+    if (tirette.estEnPlace()) {
+      Serial.println("Tirette en place");
+      delay(1000);
+      }
+    else if (tirette.estRetiree()){
+      Serial.println("Tirette retiree");
+      delay(1000);
+    }
 }
+  
+

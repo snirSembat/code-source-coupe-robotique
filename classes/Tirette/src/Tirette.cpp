@@ -6,9 +6,9 @@ Tirette::Tirette(int pin):brocheTirette(pin){
 }
 
 bool Tirette::estEnPlace() const {
-    return digitalRead(brocheTirette) == LOW;
+    return digitalRead(brocheTirette);
 }
 
 bool Tirette::estRetiree() const {
-    return digitalRead(brocheTirette) == HIGH;
+    return !digitalRead(brocheTirette);
 }

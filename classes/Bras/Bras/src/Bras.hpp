@@ -1,17 +1,20 @@
 #ifndef Bras_hpp
 #define Bras_hpp
+#include <Servo.h>
 
 class Bras { 
 
     public:
         Bras();
-        void rentrer(); 
-        void sortir();
+        void broche (int brocheBras);
+        void rentrer(int angleRentrer); 
+        void sortir(int angleSortie);
     
     private:
-
-        int angle;      
-    
+        Servo servoMoteur;
+        int angleRentrer;      
+        int angleSortie;
+        int brocheBras; 
 };
 
 #endif

@@ -5,15 +5,16 @@
 Bras bras(4);
 
 void setup() {
-	bras.begin();	
+	bras.begin();
+	bras.configAngle(0,90);
 	
 }
 
 void loop() {
 
-	bras.rentrer(0);
+	bras.rentrer();
 	delay(1000);
-	bras.sortir(90);
+	bras.sortir();
 	delay(1000);
 }
 

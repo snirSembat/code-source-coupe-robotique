@@ -14,12 +14,15 @@ void Bras::begin(){
     servoMoteur.write(0);
 
 }
-void Bras::rentrer(int angleRentrer){
+void Bras::configAngle(int angleRentrer,int angleSortie){
+
+}
+void Bras::rentrer(){
             
     servoMoteur.write(angleRentrer);
 
 }
-void Bras::sortir(int angleSortie){
+void Bras::sortir(){
 
     servoMoteur.write(angleSortie);
 

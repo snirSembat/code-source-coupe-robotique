@@ -7,9 +7,9 @@ class Bras {
     public:
         Bras(int brocheBras);
         void begin ();
-        void rentrer(int angleRentrer); 
-        void sortir(int angleSortie);
-    
+        void rentrer(); 
+        void sortir();
+        void configAngle(int angleRentrer,int angleSortie);
     private:
         Servo servoMoteur;
         int angleRentrer;      

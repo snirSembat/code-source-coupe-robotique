@@ -1,7 +1,7 @@
 Pour utiliser dans le programme principal du robot une classe venant d'un autre projet PlatformIO :
 
 1) Dans le projet que l'on veut ajouter comme dépendance, il doit y avoir
-un manifeste nommmé "library.properties". Ce fichier doit contenir :
+un manifeste nommé "library.properties". Ce fichier doit contenir :
 	name=leNomDeLaDependance
 	version=0.0.1
 	author=VotreNom

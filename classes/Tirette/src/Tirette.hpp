@@ -1,10 +1,10 @@
 #include <Arduino.h>
-#ifndef Tirette_HPP
-#define Tirette_HPP
+#ifndef tirette_HPP
+#define tirette_HPP
 
 class Tirette {
     public:
-    Tirette(int brocheTirette);
+    Tirette(int pin);
     bool estEnPlace() const;
     bool estRetiree() const;
     
@@ -12,3 +12,4 @@ class Tirette {
     const int brocheTirette;
 };
 #endif
+

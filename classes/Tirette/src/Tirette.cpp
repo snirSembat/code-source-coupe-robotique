@@ -1,7 +1,9 @@
 #include <Arduino.h>
-#include "Tirette.hpp"
+#include "tirette.hpp"
 
-Tirette::Tirette(int pin):brocheTirette(pin){}
+Tirette::Tirette(int pin):brocheTirette(pin){
+     pinMode (brocheTirette, INPUT_PULLUP);
+}
 
 bool Tirette::estEnPlace() const {
     return digitalRead(brocheTirette) == HIGH;

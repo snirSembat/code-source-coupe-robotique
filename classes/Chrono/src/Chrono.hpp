@@ -9,7 +9,6 @@ class Chrono {
         void reset();
         unsigned long getTempsEcoule()const;
         unsigned long getTempsRestant()const;
-        void veriFinMatch()const;
 
     private:
         static unsigned long tempsInitial;
